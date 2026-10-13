@@ -34,7 +34,7 @@ def game_preview(d, t):
             return 0
         i = sum(1 for v in nz if v < c)
         return 1 + min(3, 4 * i // max(1, len(nz)))
-    pal = ["#1e6f8f", "#14b8a6", t["a1"], t["a2"], t["a4"]]
+    pal = ([t["empty"], "#5e4524", "#9a6524", "#d98c2b", "#ffc46b"] if t["bg1"] == "#0f0e0c" else [t["empty"], "#e8c79a", "#d9a35f", "#c47f2a", "#9a5a12"])
     gx, gy, bw, bh, g = 120, 46, 21, 13, 3
     bricks = {}
     for i, c in enumerate(counts):
@@ -75,7 +75,7 @@ def game_preview(d, t):
     for k, (bx, by, col) in bricks.items():
         if k in hit_set:
             tm = hit_set[k] / T
-            body.append(f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="3" fill="{col}">'
+            body.append(f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" fill="{col}">'
                         f'<animate attributeName="opacity" dur="{T}s" repeatCount="indefinite" calcMode="discrete" '
                         f'values="1;0;1" keyTimes="0;{tm:.4f};0.985"/></rect>')
             cx_, cy_ = bx + bw / 2, by + bh / 2
@@ -89,26 +89,25 @@ def game_preview(d, t):
                         f'<animate attributeName="r" dur="{T}s" repeatCount="indefinite" values="4;4;30;30" keyTimes="0;{tm:.4f};{min(tm + .08, .98):.4f};1"/>'
                         f'<animate attributeName="opacity" dur="{T}s" repeatCount="indefinite" values="0;0;1;0;0" keyTimes="0;{tm:.4f};{tm + .004:.4f};{min(tm + .08, .98):.4f};1"/></circle>')
         else:
-            body.append(f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="3" fill="{col}" opacity=".9"/>')
+            body.append(f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" fill="{col}"/>')
     # paddle follows the bottom touch points
     pxs = []
     for (a, b), tm in zip(pts, times):
         pxs.append(a - 65)
     pv = ";".join(f"{v:.1f}" for v in pxs)
-    css = (f".lbl{{font:800 15px {MONO};fill:{t['text']}}}.cta{{animation:pul 1.6s ease-in-out infinite}}"
+    css = (f".lbl{{font:800 15px {MONO};fill:{t['text']}}}.cta{{}}"
            f"@keyframes pul{{50%{{opacity:.55}}}}")
     svg = _open(W, H, t, "Contribution Breakout: a playable arcade game built from Qasim Raza Malik's GitHub contributions", css)
     svg += f'<path id="bp" d="{path}" fill="none"/>'
     svg += "".join(body)
-    svg += (f'<rect y="{paddle_y}" width="130" height="10" rx="5" fill="{t["a1"]}" filter="url(#gl)">'
+    svg += (f'<rect y="{paddle_y}" width="130" height="8" fill="{t["a1"]}">'
             f'<animate attributeName="x" dur="{T}s" repeatCount="indefinite" values="{pv}" keyTimes="{kt}"/></rect>')
-    for k, op in ((0, 1), (1, .5), (2, .25)):
-        svg += (f'<circle r="{7 - k}" fill="{"#ffffff" if t["bg1"].startswith("#07") else t["a2"]}" opacity="{op}" filter="url(#gl)">'
-                f'<animateMotion dur="{T}s" repeatCount="indefinite" begin="-{k * .04:.2f}s" keyPoints="{";".join(f"{i / (len(pts) - 1):.4f}" for i in range(len(pts)))}" keyTimes="{kt}" calcMode="linear"><mpath href="#bp"/></animateMotion></circle>')
+    svg += (f'<circle r="7" fill="{t["text"]}">'
+            f'<animateMotion dur="{T}s" repeatCount="indefinite" keyPoints="{";".join(f"{i / (len(pts) - 1):.4f}" for i in range(len(pts)))}" keyTimes="{kt}" calcMode="linear"><mpath href="#bp"/></animateMotion></circle>')
     svg += (f'<text class="lbl" x="28" y="30">CONTRIBUTION BREAKOUT</text>'
             f'<text x="{W - 28}" y="30" text-anchor="end" style="font:600 13px {MONO};fill:{t["muted"]}">bricks = my real commits · sound on</text>'
-            f'<g class="cta"><rect x="{W / 2 - 120}" y="{H / 2 + 10}" width="240" height="44" rx="12" fill="{t["a2"]}" opacity=".18" stroke="{t["a2"]}"/>'
-            f'<text x="{W / 2}" y="{H / 2 + 39}" text-anchor="middle" style="font:800 18px {SANS}">▶ CLICK TO PLAY</text></g></svg>')
+            f'<g class="cta"><rect x="{W / 2 - 110}" y="{H / 2 + 10}" width="220" height="42" rx="3" fill="{t["a1"]}"/>'
+            f'<text x="{W / 2}" y="{H / 2 + 37}" text-anchor="middle" style="font:700 15px {MONO};letter-spacing:.12em;fill:{t["bg1"]}">PLAY THE GAME →</text></g></svg>')
     return svg
 
 
@@ -140,10 +139,10 @@ def sticker_robot(t):
            ".hd{animation:tilt 4s ease-in-out infinite;transform-box:fill-box;transform-origin:center bottom}"
            "@keyframes tilt{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}")
     inner = (f'<g class="hd"><line x1="110" y1="38" x2="110" y2="58" stroke="{t["muted"]}" stroke-width="4"/>'
-             f'<circle class="ant" cx="110" cy="34" r="7" fill="{t["a4"]}" filter="url(#gl)"/>'
+             f'<circle class="ant" cx="110" cy="34" r="7" fill="{t["a4"]}"/>'
              f'<rect x="58" y="58" width="104" height="84" rx="22" fill="{t["node"]}" stroke="{t["a2"]}" stroke-width="3"/>'
-             f'<ellipse class="eye" cx="88" cy="96" rx="10" ry="12" fill="{t["a1"]}" filter="url(#gl)"/>'
-             f'<ellipse class="eye" cx="132" cy="96" rx="10" ry="12" fill="{t["a1"]}" filter="url(#gl)"/>'
+             f'<ellipse class="eye" cx="88" cy="96" rx="10" ry="12" fill="{t["a1"]}"/>'
+             f'<ellipse class="eye" cx="132" cy="96" rx="10" ry="12" fill="{t["a1"]}"/>'
              f'<path d="M92 122 Q110 134 128 122" stroke="{t["a3"]}" stroke-width="4" fill="none" stroke-linecap="round"/>'
              f'<rect x="48" y="86" width="10" height="24" rx="4" fill="{t["a2"]}"/><rect x="162" y="86" width="10" height="24" rx="4" fill="{t["a2"]}"/></g>'
              f'<text x="110" y="180" text-anchor="middle" style="font:700 13px {MONO};fill:{t["muted"]}">training models</text>')
@@ -167,8 +166,8 @@ def sticker_radar(t):
     inner = "".join(f'<circle cx="110" cy="100" r="{r}" fill="none" stroke="{t["a3"]}" stroke-opacity=".35"/>' for r in (24, 48, 72))
     inner += (f'<g class="sw"><path d="M110 100 L182 100 A72 72 0 0 0 161 49Z" fill="{t["a3"]}" opacity=".35"/>'
               f'<line x1="110" y1="100" x2="182" y2="100" stroke="{t["a3"]}" stroke-width="2"/></g>'
-              f'<circle class="bl" cx="150" cy="62" r="6" fill="{t["a3"]}" filter="url(#gl)"/>'
-              f'<circle class="bl" cx="76" cy="130" r="5" fill="{t["a3"]}" filter="url(#gl)" style="animation-delay:1.1s"/>'
+              f'<circle class="bl" cx="150" cy="62" r="6" fill="{t["a3"]}"/>'
+              f'<circle class="bl" cx="76" cy="130" r="5" fill="{t["a3"]}" style="animation-delay:1.1s"/>'
               f'<text x="110" y="205" text-anchor="middle" style="font:700 13px {MONO};fill:{t["a3"]}">open to work</text>')
     return _sticker(t, "Animated radar sticker: open to work", inner, css)
 
@@ -187,7 +186,7 @@ def terminal(p, t):
     out = _open(W, H, t, "Terminal card: what Qasim Raza Malik is building now", css)
     out += (f'<rect x=".5" y=".5" width="{W - 1}" height="34" rx="18" fill="{t["node"]}"/>'
             f'<rect x=".5" y="18" width="{W - 1}" height="17" fill="{t["node"]}"/>'
-            + "".join(f'<circle cx="{26 + i * 20}" cy="17" r="6" fill="{c}"/>' for i, c in enumerate(("#f87171", "#fbbf24", "#34d399")))
+            + "".join(f'<circle cx="{26 + i * 20}" cy="17" r="6" fill="{c}"/>' for i, c in enumerate((t["a2"], t["a1"], t["a3"])))
             + f'<text x="{W / 2}" y="22" text-anchor="middle" style="font:600 13px {MONO};fill:{t["muted"]}">~/now-building</text>')
     delay = .3
     for i, (pr, txt, col) in enumerate(lines):
@@ -203,12 +202,9 @@ def terminal(p, t):
 
 # ----------------------------------------------------------------- divider
 def divider(t):
-    W, H = 1200, 36
-    css = ".wv{animation:wv 6s linear infinite}@keyframes wv{to{transform:translateX(-200px)}}"
-    pts = " ".join(f"L{i * 10},{18 + math.sin(i / 20 * math.tau) * 8:.1f}" for i in range(0, 161))
-    out = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="section divider">'
-           f'<defs><linearGradient id="lg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1200" y2="0"><stop offset="0" stop-color="{t["a1"]}" stop-opacity="0"/><stop offset=".2" stop-color="{t["a1"]}"/>'
-           f'<stop offset=".5" stop-color="{t["a2"]}"/><stop offset=".8" stop-color="{t["a4"]}"/><stop offset="1" stop-color="{t["a4"]}" stop-opacity="0"/></linearGradient></defs>'
-           f'<style>{css}{REDUCED}</style>'
-           f'<g class="wv"><path d="M0,18 {pts}" fill="none" stroke="url(#lg)" stroke-width="2.5"/></g></svg>')
-    return out
+    W, H = 1200, 20
+    css = ".dash{animation:mv 3.2s cubic-bezier(.6,0,.4,1) infinite}@keyframes mv{from{transform:translateX(-120px)}to{transform:translateX(1200px)}}"
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="section divider">'
+            f'<style>{css}{REDUCED}</style>'
+            f'<rect x="0" y="9.5" width="{W}" height="1" fill="{t["border"]}"/>'
+            f'<rect class="dash" x="0" y="8.5" width="120" height="3" fill="{t["a1"]}"/></svg>')

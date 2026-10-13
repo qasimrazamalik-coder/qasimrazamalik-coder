@@ -1,49 +1,48 @@
 {
   "login": "qasimrazamalik-coder",
   "name": "Qasim Raza Malik",
-  "headline": "Full-Stack Engineer (React · TypeScript · Node.js) · AI & Backend Developer · Data Analyst",
+  "headline": "AI & Backend Engineer · Full-Stack (React · TypeScript · Node.js) · Data Analyst",
   "location": "Abbottabad, Pakistan · Remote",
-  "status": "Open to Full-Stack, AI & Analytics Engineering roles",
-  "tagline": "I build React front ends, Node.js and Python back ends, and open-source AI tools that ship.",
-  "hero_tagline": "React front ends, Node.js back ends, data & AI that ship.",
+  "status": "Open to AI, Backend & Full-Stack Engineering roles",
+  "tagline": "I build AI features, backend services and APIs, plus the React front ends and data work around them.",
+  "hero_tagline": "AI features, backend services, APIs, and the apps around them.",
   "roles": [
+    "AI & Backend Engineer",
     "Full-Stack Engineer",
-    "React & TypeScript Developer",
-    "AI & Backend Developer",
     "Data Analyst",
     "Open-Source AI Builder"
   ],
   "chips": [
-    "React",
-    "TypeScript",
-    "Node.js",
     "Python",
-    "SQL",
+    "Node.js",
+    "LLMs & RAG",
+    "REST APIs",
     "PostgreSQL",
-    "Dashboards"
+    "React",
+    "SQL"
   ],
   "about": [
-    "I'm **Qasim Raza Malik**, a **full-stack software engineer and data analyst** from **Abbottabad, Pakistan**, working with **React, TypeScript, Node.js, Python and SQL**.",
-    "I'm an **AI & Backend Developer at [Digital Experts Dev](https://digitalexperts.dev)**, building backend services and REST API integrations for AI-enabled web apps. Before that I was a **Full Stack Developer Intern at Axelliant**, and as a **freelance frontend developer at Lytnetwork** I delivered **30+ live business and e-commerce websites**.",
+    "I'm **Qasim Raza Malik**, an **AI & Backend Engineer** from **Abbottabad, Pakistan**. I work mostly in **Python, Node.js, TypeScript and SQL**, and I also build **React** front ends and do data analysis.",
+    "I'm an **AI & Backend Engineer at [Digital Experts Dev](https://digitalexperts.dev)**, building backend services and REST API integrations for AI-enabled web apps. Before that I was a **Full Stack Developer Intern at Axelliant**, and as a **freelance frontend developer at Lytnetwork** I delivered **30+ live business and e-commerce websites**.",
     "On the data side, I've worked remotely in **data roles at Blip, Stellar Tech (data engineering) and Scentbird (BI / data analyst)**, and I built the forecasting dashboard for **ForecastPro AI**, an e-commerce sales-prediction project.",
     "I hold a **BS in Computer Science** from **Abbottabad University of Science and Technology (AUST)** and I'm doing an **MS in Artificial Intelligence at COMSATS**. I also co-run **[Primeura Digital Solutions](https://primeura.com)**."
   ],
   "focus": [
     [
-      "Full-stack web apps",
-      "React + TypeScript front ends with clean, reusable components"
+      "AI engineering",
+      "LLM features, RAG agents, voice cloning and speech, computer vision"
     ],
     [
       "Backend & APIs",
-      "Node.js, Express and PostgreSQL APIs that stay correct under concurrent load"
+      "Node.js, Express, FastAPI and PostgreSQL services that stay correct under concurrent load"
+    ],
+    [
+      "Full-stack apps",
+      "React + TypeScript front ends wired to the APIs I build"
     ],
     [
       "Data analysis & BI",
-      "SQL and Python analysis, dashboards, data visualisation and sales forecasting"
-    ],
-    [
-      "Applied AI",
-      "voice cloning, speech, RAG agents and computer vision, free to run on Colab"
+      "SQL and Python analysis, dashboards and sales forecasting"
     ],
     [
       "Creative tech",

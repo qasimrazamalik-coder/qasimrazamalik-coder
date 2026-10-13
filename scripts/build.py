@@ -20,15 +20,16 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "assets" / "generated"
 SANS = "'Segoe UI', Ubuntu, 'Helvetica Neue', Helvetica, Arial, sans-serif"
+SERIF = "'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif"
 MONO = "'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace"
 
 THEMES = {
-    "dark": dict(bg1="#070b18", bg2="#101935", border="#1f2a4d", text="#eef2ff", muted="#8f9bbf",
-                 a1="#22d3ee", a2="#a78bfa", a3="#34d399", a4="#f472b6", grid="#ffffff", grid_o="0.045",
-                 node="#0f1834", chip="#141f40", empty="#161f3b"),
-    "light": dict(bg1="#f8faff", bg2="#eaf0ff", border="#d5ddf2", text="#0b1224", muted="#4b5675",
-                  a1="#0891b2", a2="#7c3aed", a3="#059669", a4="#db2777", grid="#0b1224", grid_o="0.05",
-                  node="#ffffff", chip="#ffffff", empty="#e3e9f7"),
+    "dark": dict(bg1="#0f0e0c", bg2="#14120f", border="#2a261f", text="#ede6d6", muted="#8f8676",
+                 a1="#f2a03d", a2="#e2553b", a3="#8fae7a", a4="#c9b48f", grid="#ede6d6", grid_o="0.05",
+                 node="#17150f", chip="#17150f", empty="#211e18"),
+    "light": dict(bg1="#f5f0e6", bg2="#efe8da", border="#ddd3c1", text="#1c1a16", muted="#6b6457",
+                  a1="#b86a12", a2="#b33a22", a3="#4d7a3f", a4="#8a6a3e", grid="#1c1a16", grid_o="0.06",
+                  node="#fbf8f1", chip="#fbf8f1", empty="#e6dfd0"),
 }
 
 REDUCED = "@media (prefers-reduced-motion: reduce){*{animation:none!important}}"
@@ -130,7 +131,7 @@ text{{font-family:{SANS}}}
 .mono{{font-family:{MONO}}}
 .prompt{{font:500 15px {MONO};fill:{t["a3"]};animation:type1 1.6s .1s steps(32,end) both}}
 @keyframes type1{{from{{clip-path:inset(-20% 100% -20% 0)}}to{{clip-path:inset(-20% 0 -20% 0)}}}}
-.name{{font:800 58px {SANS};fill:url(#name);letter-spacing:-1px;animation:up .9s .35s cubic-bezier(.2,.8,.2,1) both}}
+.name{{font:700 60px {SERIF};fill:{t["text"]};letter-spacing:-1px;animation:up .9s .35s cubic-bezier(.2,.8,.2,1) both}}
 .role{{font:600 25px {MONO};fill:{t["text"]}}}
 .caret{{font:600 25px {MONO};fill:{t["a1"]};animation:blink 1s steps(1) infinite}}
 .tag{{font:400 17.5px {SANS};fill:{t["muted"]};animation:up .9s .8s cubic-bezier(.2,.8,.2,1) both}}
@@ -159,15 +160,11 @@ text{{font-family:{SANS}}}
 <g clip-path="url(#card)">
 <rect width="{W}" height="{H}" fill="url(#bg)"/>
 <rect width="{W}" height="{H}" fill="url(#grid)"/>
-<g filter="url(#blur)" opacity=".55">
-<circle class="blob" cx="900" cy="80" r="170" fill="{t["a2"]}" fill-opacity=".45"/>
-<circle class="blob" cx="300" cy="420" r="190" fill="{t["a1"]}" fill-opacity=".30" style="animation-delay:-7s"/>
-<circle class="blob" cx="1150" cy="380" r="140" fill="{t["a4"]}" fill-opacity=".25" style="animation-delay:-3s"/>
-</g>
 </g>
 <rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="22" fill="none" stroke="{t["border"]}"/>
 <text class="prompt" x="56" y="78">~/{x(p["login"])} $ whoami</text>
 <text class="name" x="54" y="150">{x(p["name"])}</text>
+<rect x="56" y="166" width="0" height="3" fill="{t["a1"]}"><animate attributeName="width" from="0" to="96" dur=".9s" begin=".6s" fill="freeze" calcMode="spline" keySplines=".2 .8 .2 1" keyTimes="0;1"/></rect>
 <text class="caret" x="56" y="214">&gt;</text>
 {"".join(role_svg)}
 <text class="tag" x="56" y="262">{x(p.get("hero_tagline", p["tagline"]))}</text>
@@ -357,11 +354,11 @@ def readme(p):
     L, login = p["links"], p["login"]
     badges = []
     if L.get("linkedin"):
-        badges.append(badge("LinkedIn", p["name"], "0A66C2", "linkedin", L["linkedin"]))
+        badges.append(badge("LinkedIn", p["name"], "2a261f", "linkedin", L["linkedin"]))
     if L.get("website"):
-        badges.append(badge("Website", L["website"].split("//")[-1], "7c3aed", "googlechrome", L["website"]))
+        badges.append(badge("Website", L["website"].split("//")[-1], "b86a12", "googlechrome", L["website"]))
     if L.get("email"):
-        badges.append(badge("Email", "Say hello", "0891b2", "gmail", f"mailto:{L['email']}"))
+        badges.append(badge("Email", "Say hello", "2a261f", "gmail", f"mailto:{L['email']}"))
     rows = []
     for pr in p["projects"]:
         nm = f'[**{pr["name"]}**](https://github.com/{login}/{pr["repo"]})' if pr["repo"] else f'**{pr["name"]}**'
@@ -438,7 +435,7 @@ Every brick in this arcade game is a real day from my GitHub contribution graph.
 
 ## Let's work together
 
-Hiring a **full-stack engineer, AI/backend developer or data analyst**, or need a web app, API, dashboard or AI tool built? {"Email me at **" + L["email"] + "**" if L.get("email") else "Reach out"}{" or message me on [LinkedIn](" + L["linkedin"] + ")" if L.get("linkedin") else ""}.
+Hiring an **AI & Backend Engineer**, or need an AI feature, API, data pipeline or full-stack app built? {"Email me at **" + L["email"] + "**" if L.get("email") else "Reach out"}{" or message me on [LinkedIn](" + L["linkedin"] + ")" if L.get("linkedin") else ""}.
 
 <sub>Cards on this page are drawn by my own GitHub Action from live GitHub data, refreshed daily. No third-party stats services.</sub>
 '''
