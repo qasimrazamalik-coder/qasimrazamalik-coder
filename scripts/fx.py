@@ -28,15 +28,20 @@ def game_preview(d, t):
     W, H, T = 1200, 300, 7.0
     cols, rows = 40, 7
     counts = [c for _, c in d["days"]][-cols * rows:]
-    mx = max(counts + [1])
-    pal = ["#0f6b5c", "#0e9f8a", t["a1"], t["a2"], t["a4"]]
+    nz = sorted(c for c in counts if c > 0)
+    def rank(c):
+        if not c:
+            return 0
+        i = sum(1 for v in nz if v < c)
+        return 1 + min(3, 4 * i // max(1, len(nz)))
+    pal = ["#1e6f8f", "#14b8a6", t["a1"], t["a2"], t["a4"]]
     gx, gy, bw, bh, g = 120, 46, 21, 13, 3
     bricks = {}
     for i, c in enumerate(counts):
         col, row = i // 7, i % 7
-        if c == 0:
+        if c == 0 and (i * 7919) % 10 < 4:
             continue
-        lvl = 1 + min(3, int(4 * c / (mx + 1)))
+        lvl = rank(c)
         bricks[(col, row)] = (gx + col * (bw + g), gy + row * (bh + g), pal[lvl])
     # ball path: alternating bounces between paddle and chosen bricks
     rnd = random.Random(4)

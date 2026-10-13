@@ -68,7 +68,7 @@ a{color:var(--a1)}
 const cv=document.getElementById('c'),cx=cv.getContext('2d');
 const $=id=>document.getElementById(id);
 const store={get(k,d){try{const v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
-const COLORS=['#0f6b5c','#0e9f8a','#22d3ee','#a78bfa','#f472b6'];
+const COLORS=['#1e6f8f','#14b8a6','#22d3ee','#a78bfa','#f472b6'];
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ---------------- sound: synthesized with Web Audio, no files ---------------- */
@@ -109,14 +109,15 @@ addEventListener('resize',resize);
 
 function build(){
   const counts=(days||sampleDays()).slice(-364);
-  const mx=Math.max(1,...counts);
+  const nz=counts.filter(c=>c>0).sort((p,q)=>p-q);
+  const rank=c=>{if(!c)return 0;let i=0;while(i<nz.length&&nz[i]<c)i++;return 1+Math.min(3,Math.floor(4*i/Math.max(1,nz.length)))};
   // compress 52 weeks into a grid that fits: use last N weeks depending on level
   const weeks=Math.min(52,16+st.level*6,Math.floor(W/16));
   const start=counts.length-weeks*7;
   bricks=[];
   for(let w=0;w<weeks;w++)for(let d=0;d<7;d++){
-    const c=counts[start+w*7+d]||0; if(c===0&&Math.random()<.55)continue;
-    const lvl=c===0?0:1+Math.min(3,Math.floor(4*c/(mx+1)));
+    const c=counts[start+w*7+d]||0; if(c===0&&Math.random()<.3)continue;
+    const lvl=rank(c);
     bricks.push({w,d,hp:Math.max(1,lvl),max:Math.max(1,lvl),lvl,c,alive:true,hit:0});
   }
   layout();
