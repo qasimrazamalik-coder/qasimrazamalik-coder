@@ -1,0 +1,133 @@
+{
+  "login": "qasimrazamalik-coder",
+  "name": "Qasim Raza Malik",
+  "headline": "Full-Stack Engineer (React · TypeScript · Node.js) · AI & Backend Developer · Data Analyst",
+  "location": "Abbottabad, Pakistan · Remote",
+  "status": "Open to Full-Stack, AI & Analytics Engineering roles",
+  "tagline": "I build React front ends, Node.js and Python back ends, and open-source AI tools that ship.",
+  "hero_tagline": "React front ends, Node.js back ends, data & AI that ship.",
+  "roles": [
+    "Full-Stack Engineer",
+    "React & TypeScript Developer",
+    "AI & Backend Developer",
+    "Data Analyst",
+    "Open-Source AI Builder"
+  ],
+  "chips": [
+    "React",
+    "TypeScript",
+    "Node.js",
+    "Python",
+    "SQL",
+    "PostgreSQL",
+    "Dashboards"
+  ],
+  "about": [
+    "I'm **Qasim Raza Malik**, a **full-stack software engineer and data analyst** from **Abbottabad, Pakistan**, working with **React, TypeScript, Node.js, Python and SQL**.",
+    "I'm an **AI & Backend Developer at [Digital Experts Dev](https://digitalexperts.dev)**, building backend services and REST API integrations for AI-enabled web apps. Before that I was a **Full Stack Developer Intern at Axelliant**, and as a **freelance frontend developer at Lytnetwork** I delivered **30+ live business and e-commerce websites**.",
+    "On the data side, I've worked remotely in **data roles at Blip, Stellar Tech (data engineering) and Scentbird (BI / data analyst)**, and I built the forecasting dashboard for **ForecastPro AI**, an e-commerce sales-prediction project.",
+    "I hold a **BS in Computer Science** from **Abbottabad University of Science and Technology (AUST)** and I'm doing an **MS in Artificial Intelligence at COMSATS**. I also co-run **[Primeura Digital Solutions](https://primeura.com)**."
+  ],
+  "focus": [
+    [
+      "Full-stack web apps",
+      "React + TypeScript front ends with clean, reusable components"
+    ],
+    [
+      "Backend & APIs",
+      "Node.js, Express and PostgreSQL APIs that stay correct under concurrent load"
+    ],
+    [
+      "Data analysis & BI",
+      "SQL and Python analysis, dashboards, data visualisation and sales forecasting"
+    ],
+    [
+      "Applied AI",
+      "voice cloning, speech, RAG agents and computer vision, free to run on Colab"
+    ],
+    [
+      "Creative tech",
+      "motion graphics tooling, Three.js and browser games"
+    ]
+  ],
+  "projects": [
+    {
+      "name": "Voice Cloner",
+      "repo": "voice-cloner",
+      "desc": "Free, open-source Urdu + English voice cloning: studio, real-time streaming, speech-to-speech and LoRA fine-tuning. Runs free on Google Colab.",
+      "stack": "Python · PyTorch · Gradio · Whisper"
+    },
+    {
+      "name": "Motion Forge",
+      "repo": "motion-forge",
+      "desc": "AI motion graphics and social video edits that check their own frames: kinetic type, promos, Reels/TikTok captions, DaVinci / Premiere / CapCut hand-off.",
+      "stack": "Claude Code skill · JavaScript"
+    },
+    {
+      "name": "Encore Seat Booking API",
+      "repo": "encore-seat-booking-api",
+      "desc": "Event seat-booking API that never double-sells: expiring holds, all-or-nothing seat locking and idempotent checkout, proven by race tests.",
+      "stack": "Node.js · Express 5 · PostgreSQL"
+    },
+    {
+      "name": "Ticker URL Shortener",
+      "repo": "ticker-url-shortener",
+      "desc": "URL shortener with analytics: Feistel short codes, cached redirects, batched click logging and cookie-free unique visitors.",
+      "stack": "Node.js · Express 5 · PostgreSQL"
+    },
+    {
+      "name": "Platform Task Tracker API",
+      "repo": "platform-task-tracker-api",
+      "desc": "Project and task tracker API with per-project roles, four-eyes review, WIP limits, dependency cycle checks and flow metrics.",
+      "stack": "Node.js · Express 5 · PostgreSQL"
+    },
+    {
+      "name": "Shelfmark Library API",
+      "repo": "shelfmark-library-api",
+      "desc": "Library circulation REST API: loans, renewals, hold queues and fines that stay correct under concurrent requests.",
+      "stack": "Node.js · Express 5 · PostgreSQL"
+    },
+    {
+      "name": "Kaggle Data Scraper",
+      "repo": "Kaggle-Data-Scraper",
+      "desc": "Async scraper that collects Kaggle competition metadata, leaderboards, winners and solution write-ups into CSV for analysis.",
+      "stack": "Python · asyncio · aiohttp"
+    },
+    {
+      "name": "Chain Reaction",
+      "repo": "chain-reaction",
+      "desc": "Browser 3D physics puzzle workshop: eight challenges, a creative sandbox and deterministic Rapier simulation.",
+      "stack": "TypeScript · Three.js · Rapier"
+    },
+    {
+      "name": "AirSketch AI Pro",
+      "repo": "AirSketch-AI-Pro",
+      "desc": "AI gesture whiteboard: draw in the air with your hand, with voice commands and optional YOLO object detection.",
+      "stack": "Python · OpenCV · MediaPipe"
+    }
+  ],
+  "toolbox": [
+    "React",
+    "TypeScript",
+    "JavaScript",
+    "Node.js",
+    "Express",
+    "Python",
+    "SQL",
+    "PostgreSQL",
+    "MongoDB",
+    "pandas",
+    "Data visualisation",
+    "REST APIs",
+    "Tailwind CSS",
+    "Three.js",
+    "Docker",
+    "Git",
+    "Vercel"
+  ],
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/qasim-raza-malik-447274254",
+    "email": "iamqasimrazamalik@gmail.com",
+    "website": "https://primeura.com"
+  }
+}
