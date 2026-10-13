@@ -10,9 +10,17 @@
   <a href="https://www.linkedin.com/in/qasim-raza-malik-447274254"><img alt="LinkedIn: Qasim Raza Malik" src="https://img.shields.io/badge/LinkedIn-Qasim%20Raza%20Malik-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/></a> <a href="https://primeura.com"><img alt="Website: primeura.com" src="https://img.shields.io/badge/Website-primeura.com-7c3aed?style=for-the-badge&logo=googlechrome&logoColor=white"/></a> <a href="mailto:iamqasimrazamalik@gmail.com"><img alt="Email: Say hello" src="https://img.shields.io/badge/Email-Say%20hello-0891b2?style=for-the-badge&logo=gmail&logoColor=white"/></a>
 </p>
 
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/generated/sticker-rocket-dark.svg"/><source media="(prefers-color-scheme: light)" srcset="assets/generated/sticker-rocket-light.svg"/><img alt="Rocket sticker: shipping" src="assets/generated/sticker-rocket-dark.svg" width="23%"/></picture> <picture><source media="(prefers-color-scheme: dark)" srcset="assets/generated/sticker-robot-dark.svg"/><source media="(prefers-color-scheme: light)" srcset="assets/generated/sticker-robot-light.svg"/><img alt="Robot sticker: training AI models" src="assets/generated/sticker-robot-dark.svg" width="23%"/></picture> <picture><source media="(prefers-color-scheme: dark)" srcset="assets/generated/sticker-chai-dark.svg"/><source media="(prefers-color-scheme: light)" srcset="assets/generated/sticker-chai-light.svg"/><img alt="Chai sticker: chai into code" src="assets/generated/sticker-chai-dark.svg" width="23%"/></picture> <picture><source media="(prefers-color-scheme: dark)" srcset="assets/generated/sticker-radar-dark.svg"/><source media="(prefers-color-scheme: light)" srcset="assets/generated/sticker-radar-light.svg"/><img alt="Radar sticker: open to work" src="assets/generated/sticker-radar-dark.svg" width="23%"/></picture></p>
+
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/generated/divider-dark.svg"/><source media="(prefers-color-scheme: light)" srcset="assets/generated/divider-light.svg"/><img alt="" src="assets/generated/divider-dark.svg"/></picture></p>
+
 ## About me
 
 I'm **Qasim Raza Malik**, a **full-stack software engineer and data analyst** from **Abbottabad, Pakistan**, working with **React, TypeScript, Node.js, Python and SQL**. I'm an **AI & Backend Developer at [Digital Experts Dev](https://digitalexperts.dev)**, building backend services and REST API integrations for AI-enabled web apps. Before that I was a **Full Stack Developer Intern at Axelliant**, and as a **freelance frontend developer at Lytnetwork** I delivered **30+ live business and e-commerce websites**. On the data side, I've worked remotely in **data roles at Blip, Stellar Tech (data engineering) and Scentbird (BI / data analyst)**, and I built the forecasting dashboard for **ForecastPro AI**, an e-commerce sales-prediction project. I hold a **BS in Computer Science** from **Abbottabad University of Science and Technology (AUST)** and I'm doing an **MS in Artificial Intelligence at COMSATS**. I also co-run **[Primeura Digital Solutions](https://primeura.com)**.
+
+<p align="center">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/generated/terminal-dark.svg"/><source media="(prefers-color-scheme: light)" srcset="assets/generated/terminal-light.svg"/><img alt="Terminal card listing what Qasim Raza Malik is building now" src="assets/generated/terminal-dark.svg"/></picture>
+</p>
 
 ## What I work on
 
@@ -35,6 +43,19 @@ I'm **Qasim Raza Malik**, a **full-stack software engineer and data analyst** fr
 | [**Kaggle Data Scraper**](https://github.com/qasimrazamalik-coder/Kaggle-Data-Scraper) | Async scraper that collects Kaggle competition metadata, leaderboards, winners and solution write-ups into CSV for analysis. | Python · asyncio · aiohttp |
 | [**Chain Reaction**](https://github.com/qasimrazamalik-coder/chain-reaction) | Browser 3D physics puzzle workshop: eight challenges, a creative sandbox and deterministic Rapier simulation. | TypeScript · Three.js · Rapier |
 | [**AirSketch AI Pro**](https://github.com/qasimrazamalik-coder/AirSketch-AI-Pro) | AI gesture whiteboard: draw in the air with your hand, with voice commands and optional YOLO object detection. | Python · OpenCV · MediaPipe |
+
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/generated/divider-dark.svg"/><source media="(prefers-color-scheme: light)" srcset="assets/generated/divider-light.svg"/><img alt="" src="assets/generated/divider-dark.svg"/></picture></p>
+
+## Play my contribution graph
+
+Every brick in this arcade game is a real day from my GitHub contribution graph. Busier days are brighter and take more hits. It has particles, combos, power-ups and synthesized sound effects, and runs in the browser with no libraries.
+
+<p align="center">
+  <a href="https://qasimrazamalik-coder.github.io/qasimrazamalik-coder/game/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/generated/game-dark.svg"/><source media="(prefers-color-scheme: light)" srcset="assets/generated/game-light.svg"/><img alt="Contribution Breakout, a playable arcade game built from Qasim Raza Malik&#x27;s GitHub contributions. Click to play." src="assets/generated/game-dark.svg"/></picture></a>
+</p>
+<p align="center"><a href="https://qasimrazamalik-coder.github.io/qasimrazamalik-coder/game/"><b>▶ Play Contribution Breakout</b></a> (sound on 🔊)</p>
+
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/generated/divider-dark.svg"/><source media="(prefers-color-scheme: light)" srcset="assets/generated/divider-light.svg"/><img alt="" src="assets/generated/divider-dark.svg"/></picture></p>
 
 ## GitHub at a glance
 
